@@ -66,6 +66,36 @@
 // //Вывод результата на экран 
 // console.log(firTree);
 
+// var result = '';
+// for (var i = 1; i <= 50; i++) {
+//     result += i + '\n';
+// }
+// console.log(result);
+
+
+// var arr = [1, 2, 3, 4, 5];
+// var result = '';
+
+// for (var i = 0; i < arr.length; i++) result += arr[i] + '\n';
+// console.log(result);
+
+
+// var arr = [2, 3, 4, 5];
+// var result = 0;
+// for (var i = 0; i < arr.length; i++) result += arr[i];
+// console.log(result);
+
+
+// var i = 1;
+// var result = '';
+// for (var i = 1; i <= 100; i++) {
+//     if (i % 2 == 0) {
+//         result += i + '\n';
+//     }
+// }
+// console.log(result);
+
+
 //Initialize elements
 var getHeight = +prompt('What height do you want your fir-tree to be?');
 var result = '';
