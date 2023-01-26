@@ -1,3 +1,4 @@
+'use strict';
 function padString(str, value, symbol, flag = true) {
     var result = '';
     if (str === undefined) return;
@@ -15,4 +16,5 @@ function padString(str, value, symbol, flag = true) {
     return console.log(result);
 
 }
-padString('hello', 12, '*', true);
+padString('hello', 12, '*', false);
+
