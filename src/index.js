@@ -1,20 +1,38 @@
-'use strict';
-function padString(str, value, symbol, flag = true) {
-    var result = '';
-    if (str === undefined) return;
-    if (flag) {
-        for (var i = 0; value - str.length > i; i++) {
-            result += symbol;
-        }
-        result += str;
-    } else {
-        for (var i = 0; value - str.length > i; i++) {
-            result += symbol;
-        }
-        result = str + result;
+const obj = {
+    name: 'John',
+    surname: 'Smith',
+    age: 18,
+};
+// cloneObj
+function cloneObj(obj){
+    return obj;
+};
+let objTwo = cloneObj(obj);
+console.log(objTwo);
+//getValues
+function getValues(obj, separator){
+    let result = '';
+    for(key in obj){
+        result += obj[key] + separator;
     }
-    return console.log(result);
-
-}
-padString('hello', 12, '*', false);
-
+    return result;
+};
+console.log(getValues(obj, ' '));
+//getKeys
+function getKeys(obj, separator){
+    let result = '';
+    for(key in obj){
+        result += key + separator;
+    }
+    return result;
+};
+console.log(getKeys(obj, ' '));
+//getEntires
+function getEntires(obj){
+    let result = '';
+    for(key in obj){
+        result += key + ' : ' + obj[key] + '\n';
+    }
+    return result;
+};
+console.log(getEntires(obj));
