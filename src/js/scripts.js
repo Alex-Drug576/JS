@@ -1,4 +1,3 @@
-
 var bookEnds = function(message) {
 	var firstLetter = message.charAt(0);
   var lastLetter = message.charAt(message.length - 1);
@@ -25,4 +24,4 @@ var reverseString = function(string) {
 
 var userMessage = prompt("enter a sentence!");
 
-alert(reverseString(leadingLetter(userMessage) + endSwap(userMessage)));
+alert(reverseString(leadingLetter(userMessage) + endSwap(userMessage)))
