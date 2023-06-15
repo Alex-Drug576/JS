@@ -1,37 +1,44 @@
+// Функція для шифрування рядка
+function encryptString(inputString, scrambler, key) {
+  let encryptedString = '';
+  const scramblerLength = scrambler.length;
 
-//prompts the user to enter a sentence and stores is as variable 'sentence'
-let sentence = prompt("Enter a Sentence");
-//prints out sentence entered by user.
-alert(sentence);
+  for (let i = 0; i < inputString.length; i++) {
+    const inputChar = inputString.charCodeAt(i);
+    const scramblerChar = scrambler.charCodeAt(i % scramblerLength);
+    const keyChar = key.charCodeAt(i % key.length);
+    const encryptedChar = inputChar ^ scramblerChar ^ keyChar;
+    encryptedString += String.fromCharCode(encryptedChar);
+  }
 
-//function capitalizes first and last char of string given as argument, then returns results.
-function firstLast(frase) {
-  let first = (frase.charAt(0)).toUpperCase();
-  let last = (frase.charAt(frase.length - 1)).toUpperCase();
-  return first+last;
-}
-//prints out the output of function firstLast
-alert(firstLast(sentence));
-
-//function reverses the returned result of function firstLast, then returns this new result.
-//function also concatenates result to end of original sentence inputted by user.
-function reverse() {
-  let array=(firstLast(sentence)).split("");
-  let reversed=((array.reverse()).join(""));
-  return sentence+reversed ;
-}
-//prints out the result of function 'reverse.'
-alert(reverse());
-
-
-function fourthFunction() {
-  let howLong=(sentence.length);
-  let charAtHalfway=((sentence).charAt((Math.floor((howLong/2)))));
-  alert(charAtHalfway+sentence);
+  return encryptedString;
 }
 
-fourthFunction();
-  
+// Функція для дешифрування рядка
+function decryptString(encryptedString, scrambler, key) {
+  let decryptedString = '';
+  const scramblerLength = scrambler.length;
 
+  for (let i = 0; i < encryptedString.length; i++) {
+    const encryptedChar = encryptedString.charCodeAt(i);
+    const scramblerChar = scrambler.charCodeAt(i % scramblerLength);
+    const keyChar = key.charCodeAt(i % key.length);
+    const decryptedChar = encryptedChar ^ scramblerChar ^ keyChar;
+    decryptedString += String.fromCharCode(decryptedChar);
+  }
 
-  
+  return decryptedString;
+}
+
+// Введення даних користувачем
+const inputString = prompt('Введіть рядок для шифрування:');
+const scrambler = prompt('Введіть скремблер:');
+const key = prompt('Введіть ключ:');
+
+// Шифрування рядка
+const encryptedString = encryptString(inputString, scrambler, key);
+console.log('Зашифрований рядок:', encryptedString);
+
+// Дешифрування рядка
+const decryptedString = decryptString(encryptedString, scrambler, key);
+console.log('Дешифрований рядок:', decryptedString);
