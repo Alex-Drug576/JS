@@ -170,7 +170,7 @@ function decrypt(Chipper,Key){
     return transDecrypt(Matrix,Chipper);
 }
 
-var Key         = "keys";
+var Key         = "qwerty";
 var PlainText   = "i go to the gym";
 
 console.log("Key : \n",Key)
